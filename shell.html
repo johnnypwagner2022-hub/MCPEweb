@@ -56,7 +56,7 @@
             // Handle Native Mouse Clicks to lock pointer only for REAL mice
             canvas.addEventListener('mousedown', function (e) {
                 // e.isTrusted ensures this was a physical mouse click
-                if (e.isTrusted && !document.pointerLockElement) {
+                if (e.isTrusted && !document.pointerLockElement && !window.mcMenuOpen) {
                     canvas.requestPointerLock();
                 }
             });
